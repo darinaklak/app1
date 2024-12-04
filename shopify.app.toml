@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "003fe73591a2f2d297b8a33f53882465"
+application_url = "https://excel-pci-hardware-told.trycloudflare.com"
+embedded = true
+name = "app3remix"
+handle = "app3remix"
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://excel-pci-hardware-told.trycloudflare.com/auth/callback",
+  "https://excel-pci-hardware-told.trycloudflare.com/auth/shopify/callback",
+  "https://excel-pci-hardware-told.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "iquotify.myshopify.com"
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
